@@ -1,0 +1,6 @@
+{
+    "packages": {
+        "packages/nop-lib": {}
+    },
+    "pull-request-header": ":tractor: Time for a new release"
+}

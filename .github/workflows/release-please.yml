@@ -1,0 +1,17 @@
+on:
+  push:
+    branches:
+      - main
+name: release-please
+jobs:
+  release-please:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: google-github-actions/release-please-action@v3
+        env:
+          GIT_AUTHOR_NAME: "OpenUI5 Bot"
+          GIT_AUTHOR_EMAIL: "openui5@sap.com"
+          GIT_COMMITTER_NAME: "OpenUI5 Bot"
+          GIT_COMMITTER_EMAIL: "openui5@sap.com"
+        with:
+          command: manifest
