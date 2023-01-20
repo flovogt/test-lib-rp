@@ -1,6 +1,7 @@
 {
     "packages": {
-        "packages/nop-lib": {}
+        "packages/nop-lib": {},
+        "packages/sam-lib": {}
     },
-    "pull-request-header": ":tractor: Time for a new release"
+    "pull-request-header": ":tractor: New Release prepared"
 }
