@@ -1,3 +1,4 @@
 {
-    "packages/nop-lib": "0.0.0"
+    "packages/nop-lib": "0.0.0",
+    "packages/sam-lib": "0.0.1"
 }
