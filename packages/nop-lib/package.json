@@ -1,0 +1,18 @@
+{
+  "name": "nop-lib",
+  "version": "0.0.1-rc",
+  "license": "Apache-2.0",
+  "description": "The Test-Lib",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/flovogt/test-lib-rp.git"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Thats my test\" && exit 0"
+  },
+  "files": [
+    "src/*.js",
+    "LICENSE.txt"
+  ]
+}
