@@ -1,0 +1,7 @@
+{
+    "packages": {
+        "packages/nop-lib": {}
+    },
+    "pull-request-header": ":tractor: Time for a new release",
+    "signoff": "OpenUI5 Bot <openui5@sap.com"
+}
