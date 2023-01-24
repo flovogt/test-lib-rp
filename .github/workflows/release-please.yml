@@ -11,19 +11,24 @@ jobs:
         id: release
         with:
           command: manifest
+          monorepo-tags: true
 
-      - name: Checkout
+      - run: echo "Release Created ${{ steps.release.outputs.releases_created }}"
         if: ${{ steps.release.outputs.releases_created }}
-        uses: actions/checkout@v3
+      
+      - run: echo "Tag ${{ steps.release.outputs.tag_name }}"
+        if: ${{ steps.release.outputs.releases_created }}
 
-      - name: Use Node.js LTS 18.x
+      - run: echo "Upload Url ${{ steps.release.outputs.upload_url }}"
         if: ${{ steps.release.outputs.releases_created }}
-        uses: actions/setup-node@v3
-        with:
-          node-version: 18.x
+    
+      - run: echo "HTML Url ${{ steps.release.outputs.html_url }}"
+        if: ${{ steps.release.outputs.releases_created }}
+      
+      - run: echo "PR ${{ steps.release.outputs.pr }}"
+        if: ${{ steps.release.outputs.releases_created }}
 
       - name: Publish to NPM
-        if: ${{ steps.release.outputs.releases_created }}
         env:
           NODE_AUTH_TOKEN: ${{secrets.NPM_TOKEN}}
-        run: echo "Release ${{ steps.release.outputs }}" && npm publish --dry-run --workspaces
+        run: npm publish --dry-run --workspaces
