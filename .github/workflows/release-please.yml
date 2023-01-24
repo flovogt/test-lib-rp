@@ -11,6 +11,7 @@ jobs:
         id: release
         with:
           command: manifest
+          monorepo-tags: true
 
       - name: Checkout
         if: ${{ steps.release.outputs.releases_created }}
@@ -26,4 +27,4 @@ jobs:
         if: ${{ steps.release.outputs.releases_created }}
         env:
           NODE_AUTH_TOKEN: ${{secrets.NPM_TOKEN}}
-        run: echo "Release ${{ steps.release.outputs }}" && npm publish --dry-run --workspaces
+        run: echo "Tag; ${{ steps.release.outputs.tag_name }}\n PR;  ${{ steps.release.outputs.pr }}\n UUrl; ${{ steps.release.outputs.upload_url }}\n Hurl; ${{ steps.release.outputs.download_url }} " && npm publish --dry-run --workspaces
