@@ -11,6 +11,7 @@ jobs:
         id: release
         with:
           command: manifest
+          monorepo-tags: true
 
       - name: Checkout
         if: ${{ steps.release.outputs.releases_created }}
@@ -21,9 +22,20 @@ jobs:
         uses: actions/setup-node@v3
         with:
           node-version: 18.x
+      
+      - run: echo "Tag ${{ steps.release.outputs.tag_name }}"
+        if: ${{ steps.release.outputs.releases_created }}
+
+      - run: echo "Upload Url ${{ steps.release.outputs.upload_url }}"
+        if: ${{ steps.release.outputs.releases_created }}
+    
+      - run: echo "HTML Url ${{ steps.release.outputs.html_url }}"
+        if: ${{ steps.release.outputs.releases_created }}
+      
+      - run: echo "PR ${{ steps.release.outputs.pr }}"
+        if: ${{ steps.release.outputs.releases_created }}
 
       - name: Publish to NPM
-        if: ${{ steps.release.outputs.releases_created }}
         env:
           NODE_AUTH_TOKEN: ${{secrets.NPM_TOKEN}}
-        run: echo "Release ${{ steps.release.outputs }}" && npm publish --dry-run --workspaces
+        run: npm publish --dry-run --workspaces
