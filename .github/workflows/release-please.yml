@@ -22,8 +22,15 @@ jobs:
         with:
           node-version: 18.x
 
+      - name: Print step result
+        if: ${{ steps.release.outputs.releases_created }}
+        uses: actions/github-script@v6
+        with:
+          script: |
+            core.info(`Step result is: ${JSON.stringify(${{steps.release.outputs}})}`)
+
       - name: Publish to NPM
         if: ${{ steps.release.outputs.releases_created }}
         env:
           NODE_AUTH_TOKEN: ${{secrets.NPM_TOKEN}}
-        run: echo "Release ${{ steps.release.outputs }}" && npm publish --dry-run --workspaces
+        run: npm publish --dry-run --workspaces
