@@ -11,19 +11,14 @@ jobs:
         id: release
         with:
           command: manifest
+          monorepo-tags: true
 
-      - name: Checkout
+      - run: echo "Release Created ${{ steps.release.outputs.releases_created }}"
         if: ${{ steps.release.outputs.releases_created }}
-        uses: actions/checkout@v3
-
-      - name: Use Node.js LTS 18.x
-        if: ${{ steps.release.outputs.releases_created }}
-        uses: actions/setup-node@v3
-        with:
-          node-version: 18.x
+      
+      - run: echo "Paths releases ${{ steps.release.outputs.paths_released }}"
 
       - name: Publish to NPM
-        if: ${{ steps.release.outputs.releases_created }}
         env:
           NODE_AUTH_TOKEN: ${{secrets.NPM_TOKEN}}
-        run: echo "Release ${{ steps.release.outputs }}" && npm publish --dry-run --workspaces
+        run: npm publish --dry-run --workspaces

@@ -1,0 +1,1 @@
+echo "Hello World $MY_RESULT"
