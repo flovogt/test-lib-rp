@@ -14,6 +14,7 @@ jobs:
       id: release
       with:
         command: manifest
+        token: ${{secrets.MY_TOKEN}}
         monorepo-tags: true
   publish-package:
     needs: pull-request
