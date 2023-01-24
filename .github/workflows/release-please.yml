@@ -26,4 +26,5 @@ jobs:
         if: ${{ steps.release.outputs.releases_created }}
         env:
           NODE_AUTH_TOKEN: ${{secrets.NPM_TOKEN}}
-        run: echo "Release ${{ steps.release.outputs }}" && npm publish --dry-run --workspaces
+          MY_RESULT: ${{ steps.release.outputs }}
+        run: ./scripts/check.sh && npm publish --dry-run --workspaces
