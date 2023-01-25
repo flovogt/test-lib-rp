@@ -13,6 +13,6 @@
   },
   "files": [
     "src/*.js",
-    "../../LICENSE.txt"
+    "../../LICENSE"
   ]
 }
