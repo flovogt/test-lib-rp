@@ -4,6 +4,6 @@
         "packages/sam-lib": {}
     },
     "pull-request-header": ":tractor: New release prepared",
-    "pull-request-title-pattern": "release(${version}): ${component}",
+    "pull-request-title-pattern": "release:${component} v${version}",
     "separate-pull-requests": true
 }
