@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.0.1](https://github.com/flovogt/test-lib-rp/compare/nop-lib-v1.0.0...nop-lib-v1.0.1) (2023-02-02)
+
+
+### Bug Fixes
+
+* add licence file ([c5fe49b](https://github.com/flovogt/test-lib-rp/commit/c5fe49b8c47a3371ca3e240df577c83fd7e7b52d))
+
 ## 1.0.0 (2023-01-24)
 
 
