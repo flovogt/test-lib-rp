@@ -6,4 +6,4 @@
 function myFunc(o){
     return o;
 };
-console.log("My Sample: " + myFunc(1));
+console.log("My fancy Sample: " + myFunc(1));
