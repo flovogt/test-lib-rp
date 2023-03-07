@@ -1,5 +1,12 @@
 # Changelog
 
+## [0.1.2](https://github.com/flovogt/test-lib-rp/compare/sam-lib-v0.1.1...sam-lib-v0.1.2) (2023-03-07)
+
+
+### Bug Fixes
+
+* adjust message ([bec685b](https://github.com/flovogt/test-lib-rp/commit/bec685b0768bccb97ccc7522ac40dc619eee02af))
+
 ## [0.1.1](https://github.com/flovogt/test-lib-rp/compare/sam-lib-v0.1.0...sam-lib-v0.1.1) (2023-01-25)
 
 
